@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "messages#index"
-  resources :messages, only: [:new, :create, :edit, :update]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users, only: :show
+  resources :messages do
+    resources :comments, only: :create
+    collection do
+      get 'search'
+    end
+    resources :likes, only: [:create, :destroy]
+  end
 end
