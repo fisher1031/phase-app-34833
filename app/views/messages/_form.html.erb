@@ -1,11 +1,12 @@
-<%= form_with model: @message, id: 'new_message', local: true do |f| %>
+<%= form_with model: @message, url: messages_path, id: 'new_message', local: true do |f| %>
   <%= f.text_field :name, placeholder: "Nickname" %>
   <%= f.text_field :content, placeholder: 'type a message' %>
+  <%= f.text_field :place, placeholder: 'type a place' %>
   <%= f.file_field :images, name: 'message[images][]', id: 'message_image' %>
   <div id="image-list"></div>
     <%= f.submit '送信' %>
 <% end %>
 
-<% @message.images.each do |image| %>
-  <%= image_tag image, class: 'images' %>
-<% end %>
+<%# @message.images.each do |image| %>
+  <%#= image_tag image, class: 'images', :title => "#{image.filename}"  %>
+<%# end %>

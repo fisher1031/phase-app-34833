@@ -6,15 +6,17 @@
 
 <% @messages.each do |message| %>
 <%= link_to "#{message.name}", message_path(message.id), method: :get %>
-  <div class="messages">
-    <% message.images.each do |image| %>
-<%= image_tag image, class: 'images' %>
-<%# image.filename %>
-    <% end %>
+    (<%= "いいね：#{message.liked_users.count}" %>)
+
+<div class="messages">
+<% message.images.each do |image| %>
+<%= image_tag image, class: 'images', :title => "#{image.filename}" %></label>
+ <% end %>
   </div>
 
-    <%= link_to "作成日：#{message.created_at}", message_path(message.id), method: :get %>
-    <% message.liked_users.count %>
-    <h1><%= message.content %></h1>
+
+    <%= link_to "(作成日：#{message.created_at})", message_path(message.id), method: :get %>
+    <h1><%= link_to "(更新日：#{message.updated_at})", message_path(message.id), method: :get %></h1>
+    <h2><%= message.content %></h2>
 <% end %>
 </div>

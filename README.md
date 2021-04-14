@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション名  
+  Phase App
 
-Things you may want to cover:
+# アプリケーション概要
+  画像を1度に複数枚投稿でき、ペットの成長など日常の変化をまとめる事ができるアプリケーションです。
+  他ユーザーの投稿にいいねを押すこととコメントを残す事ができる。
 
-* Ruby version
+# URL
 
-* System dependencies
+# テスト用アカウント
 
-* Configuration
+# 利用方法
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

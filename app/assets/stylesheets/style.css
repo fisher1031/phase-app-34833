@@ -451,6 +451,63 @@ i {
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1%, rgba(0, 0, 0, 0.2) 100%);
 }
 
+.messages img {
+  transition: 0.3s;
+}
+
+.messages img:hover {
+  transform: scale(2.5);
+}
+
+.button.to {
+  display: flex;
+  justify-content: center;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 2.0rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  width: 68vh;
+}
+
+a.btn--edit {
+  color: #fff;
+}
+
+a.btn--edit:hover {
+  color: #fff;
+}
+
+a.btn-a {
+  font-size: 1.8rem;
+  position: relative;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  border-radius: 100vh;
+}
+
+a.btn-a i.fa {
+  margin-right: 1rem;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -638,7 +695,10 @@ ul li {
 body,
 html {
   height: 100%;
-  background-color: #f5f5f3;
+  background: linear-gradient(rgba(169, 214, 255, 0.6), rgba(0, 80, 159, 0.6)),url(人類の進化.jpeg);
+  background-position: center;
+  background-size:cover;
+  background-attachment: fixed;
 }
 
 body {
@@ -737,6 +797,7 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
 
 header.header {
   padding: 10px;
+  background: radial-gradient(rgb(169, 214, 255), rgb(0, 80, 159));
   border-bottom: 1px solid #D8D8D8;
   background-color: rgb(240, 140, 140);
   position: fixed;
@@ -842,6 +903,10 @@ header.header .user_nav ul li a {
 .form {
   background: url(https://dl.dropboxusercontent.com/u/5840617/DeathtoStock_Wired3.jpg);
   background-size: cover;
+}
+
+.contents.row p {
+  font-size: 30px;
 }
 
 .form .contents {
@@ -1026,16 +1091,17 @@ form input[type="submit"]:hover {
   margin: 20px 0;
   padding: 30px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: white;
+  background-color: rgba(1, 84, 61, 0.7);
   box-sizing: border-box;
+  color: rgb(255, 255, 255);
 }
 
-.container h3 {
+.container h2, h3, h4 {
   margin: 0 0 20px;
   text-align: center;
   font-weight: normal;
   font-size: 20px;
-  color: #666;
+  color: rgb(255, 255, 255);
 }
 
 .comments {
@@ -1061,10 +1127,5 @@ footer p {
   text-align: center;
 }
 
-.messages img {
-  transition: 0.3s;
-}
 
-.messages img:hover {
-  transform: scale(2.5);
-}
+

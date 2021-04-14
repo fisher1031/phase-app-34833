@@ -1,7 +1,6 @@
 <% @messages.each do |message| %>
 <h1>検索結果:</h1>
   <div class="messages">
-  <h1><%= message.keyword %></h1>
     <% message.images.each do |image| %>
       <%= image_tag image, class:'images' %>
     <% end %>

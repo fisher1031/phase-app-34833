@@ -1,36 +1,44 @@
 <div class="contents row">
     <div class="container">
 
+    <span class="name"><%= @message.name %>
+    </span>
 <div class="messages">
     <% @message.images.each do |image| %>
-      <%= image_tag image, class:'images' %>
+      <%= image_tag image, class:'images', :title => "#{image.filename}" %>
     <% end %>
 </div>
 
     <div class="more">
       <ul class="more_list">
-        <li>
-          <%= link_to '編集', edit_message_path(@message.id), method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', message_path(@message.id), method: :delete %>
-        </li>
+
       </ul>
     </div>
     <p><%= @message.content %></p>
-    <span class="name"><%= @message.name %>
-    </span>
-  </div>
 
-<h3>いいね件数: <%= @message.likes.count %></h3>
+<div class="button to">
+    <%= button_to edit_message_path(@message.id), class: "btn btn--edit btn-a", method: :get do %>
+    <i class="fa fas fa-edit"></i> 編集
+    <% end %>
+
+    <%= button_to message_path(@message.id), class: "btn btn--delete btn-b", method: :delete do %>
+    <i class="fa fas fa-trash"></i> 削除
+    <% end %>
+</div>
+
 <% if current_user.already_liked?(@message) %>
   <%= button_to 'いいねを取り消す', message_like_path(@message), method: :delete %>
 <% else %>
-  <%= button_to 'いいね', message_likes_path(@message) %>
+  <%= button_to message_likes_path(@message) do %>
+    <i class="fa fas fa-thumbs-up"></i>
+    <% end %>
 <% end %>
+<h3>いいね件数: <%= @message.likes.count %></h3>
 <h2>いいねしたユーザー</h2>
 <% @message.liked_users.each do |user| %>
+<li><%= user.nickname %></li>
 <% end %>
+
 
     <% if user_signed_in? %>
       <%= form_with(model: [@message, @comment], local: true) do |form| %>
@@ -48,6 +56,7 @@
           <%= comment.text %>
         </p>
       <% end %>
+     </div>
     </div>
   </div>
 </div>
