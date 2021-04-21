@@ -1,5 +1,14 @@
 <div class="contents row">
   <div class="container">
+
+<div class="help_box2">
+<label>
+  <span><i class="far fa-question-circle"></i></span>
+  <input type="checkbox" name="checkbox">
+<div id="popup"><%= image_tag "新規登録ヘルプ.jpeg", class: 'help1' %></div>
+</label>
+</div>
+
     <h2>Sign up</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %>

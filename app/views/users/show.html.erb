@@ -1,3 +1,11 @@
+<div class="help_box">
+<label>
+  <span><i class="far fa-question-circle"></i></span>
+  <input type="checkbox" name="checkbox">
+<div id="popup"><%= image_tag "ユーザーページヘルプ.jpeg", class: 'help1' %></div>
+</label>
+</div>
+
 <div class="contents row">
   <p><%= @nickname %>さんの投稿一覧</p>
 <% @messages.each do |message| %>

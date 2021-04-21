@@ -1,8 +1,27 @@
 <div class="contents row">
     <div class="container">
 
+<% if current_user.id == @message.user_id %>
+    <div class="help_box2">
+<label>
+  <span><i class="far fa-question-circle"></i></span>
+  <input type="checkbox" name="checkbox">
+<div id="popup"><%= image_tag "投稿詳細ヘルプ２.jpeg", class: 'help1' %></div>
+</label>
+</div>
+<% else %>
+    <div class="help_box2">
+<label>
+  <span><i class="far fa-question-circle"></i></span>
+  <input type="checkbox" name="checkbox">
+<div id="popup"><%= image_tag "投稿詳細ヘルプ１.jpeg", class: 'help1' %></div>
+</label>
+</div>
+<% end %>
+
     <span class="name"><%= @message.name %>
     </span>
+    (<%= "いいね：#{@message.liked_users.count}" %>)
 <div class="messages">
     <% @message.images.each do |image| %>
       <%= image_tag image, class:'images', :title => "#{image.filename}" %>
@@ -16,38 +35,32 @@
     </div>
     <p><%= @message.content %></p>
 
+<% if user_signed_in? %>
+<% if current_user.id == @message.user_id %>
 <div class="button to">
     <%= button_to edit_message_path(@message.id), class: "btn btn--edit btn-a", method: :get do %>
     <i class="fa fas fa-edit"></i> 編集
     <% end %>
-
     <%= button_to message_path(@message.id), class: "btn btn--delete btn-b", method: :delete do %>
     <i class="fa fas fa-trash"></i> 削除
     <% end %>
 </div>
-
+<% end %>
+<% if current_user.id != @message.user_id %>
 <% if current_user.already_liked?(@message) %>
-  <%= button_to 'いいねを取り消す', message_like_path(@message), method: :delete %>
+  <h2><%= button_to message_like_path(@message), method: :delete, class: "btn btn--delete btn-b" do  %>
+      <i class="fa fas fa-thumbs-up"></i> <%= @message.likes.count %>    取り消し
+    <% end %></h2>
 <% else %>
-  <%= button_to message_likes_path(@message) do %>
-    <i class="fa fas fa-thumbs-up"></i>
+  <h2><%= button_to message_likes_path(@message), class: "btn btn--delete btn-b" do %>
+    <i class="fa fas fa-thumbs-up"></i> <%= @message.likes.count %>
+    <% end %></h2>
     <% end %>
-<% end %>
-<h3>いいね件数: <%= @message.likes.count %></h3>
-<h2>いいねしたユーザー</h2>
-<% @message.liked_users.each do |user| %>
-<li><%= user.nickname %></li>
-<% end %>
-
-
-    <% if user_signed_in? %>
-      <%= form_with(model: [@message, @comment], local: true) do |form| %>
+<%= form_with(model: [@message, @comment], local: true) do |form| %>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
         <%= form.submit "SEND" %>
       <% end %>
-    <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-    <% end %>
+<% end %>
         <div class="comments">
       <h4>＜コメント一覧＞</h4>
       <% @comments.each do |comment| %>
@@ -56,6 +69,7 @@
           <%= comment.text %>
         </p>
       <% end %>
+    <% end %>
      </div>
     </div>
   </div>

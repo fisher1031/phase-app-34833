@@ -508,6 +508,22 @@ a.btn-a i.fa {
   margin-right: 1rem;
 }
 
+a.btn-c {
+  
+}
+
+a.btn-c i.fa {
+  position: absolute;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  font-size: 30px;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -837,7 +853,7 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 .search-form {
   text-align: center;
-  padding-top: 32px;
+  padding-top: 0px;
 }
 
 .search-form .search-input {
@@ -1127,5 +1143,88 @@ footer p {
   text-align: center;
 }
 
+#popup{
+  width:100%;
+  line-height:100px;
+  padding:0 4%;
+  box-sizing:content-box;
+  background: radial-gradient(#1417dc, skyblue);
+  background-size: cover;
+  background-position: center;
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index:10000
+}
 
+img.help1 {
+  padding: 0px 0px 0px 150px;
+  width: 1300px;
+  height: 1300px;
+}
 
+.help_box label{
+  display:block;
+  padding: 3px 0px 0px 1370px;
+}
+
+.help_box2 label{
+  display:block;
+  padding: 0px 0px 0px 900px;
+}
+
+.help_box3 label{
+  display:block;
+  padding: 5px 0px 0px 1230px;
+}
+
+.help_box label span{
+  display:block;
+  background-color:#00768e;
+  color:rgb(250, 250, 250);
+  width:0px;
+  line-height:0px;
+  border-radius:100%;
+  text-align:center;
+}
+.help_box label span:hover{
+  cursor:pointer;
+}
+
+.help_box2 label span{
+  display:block;
+  background-color:#00768e;
+  color:rgb(250, 250, 250);
+  width:0px;
+  line-height:0px;
+  border-radius:100%;
+  text-align:center;
+}
+.help_box2 label span:hover{
+  cursor:pointer;
+}
+
+.help_box3 label span{
+  color:rgb(38, 121, 0);
+  text-decoration: underline;
+}
+
+.help_box3 label span:hover{
+  cursor:pointer;
+}
+
+input[type="checkbox"]{
+  display:none;
+}
+
+input[type="checkbox"]:checked + #popup{
+  display:block;
+  transition:.2s;
+}
+
+.far.fa-question-circle {
+  font-size: 50px;
+}
