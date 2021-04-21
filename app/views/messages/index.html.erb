@@ -4,7 +4,7 @@
 <label>
   <span><i class="far fa-question-circle"></i></span>
   <input type="checkbox" name="checkbox">
-<div id="popup"><%= image_tag "トップページヘルプ２.jpg", class: 'help1' %></div>
+<div id="popup"><%= image_tag asset_path("トップページヘルプ２.jpg"), class: 'help1' %></div>
 </label>
 </div>
 <% else %>
@@ -12,7 +12,7 @@
 <label>
   <span><i class="far fa-question-circle"></i></span>
   <input type="checkbox" name="checkbox">
-<div id="popup"><%= image_tag "トップページヘルプ１.jpg", class: 'help1' %></div>
+<div id="popup"><%= image_tag asset_path("トップページヘルプ１.jpg"), class: 'help1' %></div>
 </label>
 </div>
 <% end %>
@@ -22,7 +22,7 @@
 <label>
   初めての方は<span>こちら</span>
   <input type="checkbox" name="checkbox">
-<div id="popup"><%= image_tag "初めての方へ.jpg", class: 'help1' %></div>
+<div id="popup"><%= image_tag asset_path("初めての方へ.jpg"), class: 'help1' %></div>
 </label>
 </div>
 
@@ -52,11 +52,11 @@
 <% unless @messages.present? %>
 <div class="messages">
 <h1>タイトル名(いいね:0)</h1>
-<%= image_tag "一.jpg", :title => "一.jpg" %></label>
-<%= image_tag "二.jpg", :title => "二.jpg"  %></label>
-<%= image_tag "三.jpg", :title => "三.jpg"  %></label>
-<%= image_tag "四.jpg", :title => "四.jpg"  %></label>
-<%= image_tag "五.jpg", :title => "五.jpg" %></label>
+<%= image_tag asset_path("一.jpg"), :title => "一.jpg" %></label>
+<%= image_tag asset_path("二.jpg"), :title => "二.jpg"  %></label>
+<%= image_tag asset_path("三.jpg"), :title => "三.jpg"  %></label>
+<%= image_tag asset_path("四.jpg"), :title => "四.jpg"  %></label>
+<%= image_tag asset_path("五.jpg"), :title => "五.jpg" %></label>
     <h1>(作成日：2021-01-01 12:00:00)</h1>
     <h1>(更新日：2021-01-01 12:00:00)</h1>
     <h2>説明文はここに入ります。</h2>
