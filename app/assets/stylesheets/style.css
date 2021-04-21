@@ -711,7 +711,7 @@ ul li {
 body,
 html {
   height: 100%;
-  background: linear-gradient(rgba(169, 214, 255, 0.6), rgba(0, 80, 159, 0.6)),url(人類の進化.jpeg);
+  background: linear-gradient(rgba(169, 214, 255, 0.6), rgba(0, 80, 159, 0.6)),url(人類の進化.jpg);
   background-position: center;
   background-size:cover;
   background-attachment: fixed;
