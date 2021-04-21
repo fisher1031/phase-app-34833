@@ -1,6 +1,7 @@
 <div class="contents row">
     <div class="container">
 
+<% if user_signed_in? %>
 <% if current_user.id == @message.user_id %>
     <div class="help_box2">
 <label>
@@ -17,6 +18,7 @@
 <div id="popup"><%= image_tag '/assets/投稿詳細一.jpg', class: 'help1' %></div>
 </label>
 </div>
+<% end %>
 <% end %>
 
     <span class="name"><%= @message.name %>
@@ -46,6 +48,8 @@
     <% end %>
 </div>
 <% end %>
+
+
 <% if current_user.id != @message.user_id %>
 <% if current_user.already_liked?(@message) %>
   <h2><%= button_to message_like_path(@message), method: :delete, class: "btn btn--delete btn-b" do  %>
