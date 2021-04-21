@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:edit, :update]
+  before_action :user_sign, only: [:edit, :update]
+  before_action :user_only, only: [:edit, :update]
 
   def index
     @messages = Message.all.order(created_at: :desc)
@@ -53,5 +55,17 @@ class MessagesController < ApplicationController
 
   def set_message
     @message = Message.find(params[:id])
+  end
+
+  def user_sign
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
+
+  def user_only
+    if current_user.id != @message.user_id
+      redirect_to action: :index
+    end
   end
 end
