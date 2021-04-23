@@ -38,7 +38,7 @@
 
 <div class="content_show">
   <h1>詳細：</h1>
-  <p><%= @message.content %></p>
+  <%= simple_format(@message.content,class: 'simple-format') %>
 </div>
 
 <div class="content_place">

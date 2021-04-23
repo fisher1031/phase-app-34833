@@ -117,8 +117,10 @@ Basic認証
 | Column              | Type       | Options                   |
 | ------------------- | ---------- | ------------------------- |
 | name                | string     | null: false               |
-| content             | string     | null: false               |
+| content             | text       | null: false               |
 | place               | string     | null: false               |
+| reason              | string     | null: false               |
+| how                 | string     | null: false               |
 | user                | references | foreign_key: true         |
 
 ### Association

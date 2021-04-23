@@ -1,7 +1,9 @@
 <%= form_with model: @message, url: message_path, id: 'new_message', local: true do |f| %>
-  <%= f.text_field :name, placeholder: "Nickname" %>
-  <%= f.text_field :content, placeholder: 'type a message' %>
-  <%= f.text_field :place, placeholder: 'type a place' %>
+  <%= f.text_field :name, placeholder: "タイトル名を入力して下さい" %>
+  <%= f.text_area :content, placeholder: '説明文を入力して下さい' %>
+  <%= f.text_field :place, placeholder: '場所を入力して下さい' %>
+  <%= f.text_field :reason, placeholder: '投稿の理由を入力して下さい' %>
+  <%= f.text_field :how, placeholder: '使用した道具等を入力して下さい' %>
   <%= f.file_field :images, name: 'message[images][]', id: 'message_image' %>
   <div id="image-list"></div>
     <%= f.submit '送信' %>

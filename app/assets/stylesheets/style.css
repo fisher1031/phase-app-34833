@@ -459,6 +459,10 @@ i {
   transform: scale(2.5);
 }
 
+.simple-format {
+
+}
+
 .button.to {
   display: flex;
   justify-content: center;
@@ -1235,7 +1239,6 @@ input[type="checkbox"]:checked + #popup{
 
 .content_show {
   background-color: rgba(0, 128, 49, 0.5);
-  padding: 5px　0px;
   border: 2px solid rgb(0, 54, 23);
 }
 
@@ -1245,7 +1248,6 @@ input[type="checkbox"]:checked + #popup{
 
 .content_place {
   background-color: rgba(128, 26, 0, 0.5);
-  padding: 5px 0px;
   border: 2px solid rgb(0, 54, 23);
   font-size: 30px;
 }
