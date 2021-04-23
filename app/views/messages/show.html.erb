@@ -35,7 +35,16 @@
 
       </ul>
     </div>
-    <p><%= @message.content %></p>
+
+<div class="content_show">
+  <h1>詳細：</h1>
+  <p><%= @message.content %></p>
+</div>
+
+<div class="content_place">
+  <h1>場所：</h1>
+  <p><%= @message.place %></p>
+</div>
 
 <% if user_signed_in? %>
 <% if current_user.id == @message.user_id %>

@@ -1228,3 +1228,28 @@ input[type="checkbox"]:checked + #popup{
 .far.fa-question-circle {
   font-size: 50px;
 }
+
+.user_page {
+  width: 170px;
+}
+
+.content_show {
+  background-color: rgba(0, 128, 49, 0.5);
+  padding: 5px　0px;
+  border: 2px solid rgb(0, 54, 23);
+}
+
+.content_show h1 {
+  color:#ddd;
+}
+
+.content_place {
+  background-color: rgba(128, 26, 0, 0.5);
+  padding: 5px 0px;
+  border: 2px solid rgb(0, 54, 23);
+  font-size: 30px;
+}
+
+.content_place h1 {
+  color:#ddd;
+}
