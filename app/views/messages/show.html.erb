@@ -37,13 +37,40 @@
     </div>
 
 <div class="content_show">
-  <h1>詳細：</h1>
-  <%= simple_format(@message.content,class: 'simple-format') %>
+<div class="content_name">
+  <h1>投稿者：</h1>
+  <p><%= current_user.nickname %></p>
 </div>
 
 <div class="content_place">
   <h1>場所：</h1>
   <p><%= @message.place %></p>
+</div>
+</div>
+
+<div class="content_day">
+  <h1>作成日：</h1>
+  <p><%= @message.created_at.to_s(:datetime_jp2) %></p>
+</div>
+
+<div class="content_day">
+  <h1>更新日：</h1>
+  <p><%= @message.updated_at.to_s(:datetime_jp2) %></p>
+</div>
+
+<div class="content_how">
+  <h1>使用器具：</h1>
+  <p><%= @message.how %></p>
+</div>
+
+<div class="content_text">
+  <h1>詳細：</h1>
+  <%= simple_format(@message.content,class: 'simple-format') %>
+</div>
+
+<div class="content_reason">
+  <h1>きっかけ：</h1>
+  <p><%= @message.reason %></p>
 </div>
 
 <% if user_signed_in? %>

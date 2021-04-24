@@ -459,10 +459,6 @@ i {
   transform: scale(2.5);
 }
 
-.simple-format {
-
-}
-
 .button.to {
   display: flex;
   justify-content: center;
@@ -1237,21 +1233,87 @@ input[type="checkbox"]:checked + #popup{
   width: 170px;
 }
 
-.content_show {
-  background-color: rgba(0, 128, 49, 0.5);
+.content_text {
+  background-color: rgba(1, 194, 75, 0.5);
   border: 2px solid rgb(0, 54, 23);
 }
 
-.content_show h1 {
+.content_text h1 {
   color:#ddd;
+}
+
+.content_show {
+  display: flex;
 }
 
 .content_place {
   background-color: rgba(128, 26, 0, 0.5);
   border: 2px solid rgb(0, 54, 23);
-  font-size: 30px;
+  width: 75%;
+}
+
+.content_place p {
+  text-align:center;
+  color:#ddd;
 }
 
 .content_place h1 {
+  color:#ddd;
+}
+
+.content_name {
+  background-color: rgba(126, 128, 0, 0.5);
+  border: 2px solid rgb(0, 54, 23);
+  width: 25%;
+}
+
+.content_name p {
+  text-align:center;
+  color:#ddd;
+}
+
+.content_name h1 {
+  color:#ddd;
+}
+
+.content_day {
+  background-color: rgba(107, 0, 128, 0.5);
+  border: 2px solid rgb(0, 54, 23);
+}
+
+.content_day p {
+  text-align:center;
+  color:#ddd;
+}
+
+.content_day h1 {
+  color:#ddd;
+}
+
+.content_how {
+  background-color: rgba(128, 0, 32, 0.5);
+  border: 2px solid rgb(0, 54, 23);
+}
+
+.content_how p {
+  text-align:center;
+  color:#ddd;
+}
+
+.content_how h1 {
+  color:#ddd;
+}
+
+.content_reason {
+  background-color: rgba(0, 9, 128, 0.5);
+  border: 2px solid rgb(0, 54, 23);
+}
+
+.content_reason p {
+  text-align:center;
+  color:#ddd;
+}
+
+.content_reason h1 {
   color:#ddd;
 }

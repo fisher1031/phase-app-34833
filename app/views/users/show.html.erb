@@ -18,8 +18,8 @@
     <% end %>
   </div>
       
-    <%= link_to "(作成日：#{message.created_at})", message_path(message.id), method: :get %>
-    <h1><%= link_to "(更新日：#{message.updated_at})", message_path(message.id), method: :get %></h1>
+    <%= link_to "(作成日：#{message.created_at.to_s(:datetime_jp)})", message_path(message.id), method: :get %>
+    <h1><%= link_to "(更新日：#{message.updated_at.to_s(:datetime_jp)})", message_path(message.id), method: :get %></h1>
     <%= simple_format(message.content,class: 'simple-format') %>
     <% end %>
 </div>
