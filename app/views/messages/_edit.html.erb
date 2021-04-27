@@ -1,4 +1,5 @@
 <%= form_with model: @message, url: message_path, id: 'new_message', local: true do |f| %>
+タイトル名（
   <%= f.text_field :name, placeholder: "タイトル名を入力して下さい" %>
   <%= f.text_area :content, placeholder: '説明文を入力して下さい' %>
   <%= f.text_field :place, placeholder: '場所を入力して下さい' %>

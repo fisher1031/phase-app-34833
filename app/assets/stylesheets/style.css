@@ -1317,3 +1317,34 @@ input[type="checkbox"]:checked + #popup{
 .content_reason h1 {
   color:#ddd;
 }
+
+.title h3, 
+.title h2 {
+  font-size: 30px;
+  padding-top: 6px;
+  color:rgb(255, 251, 0);
+}
+
+.form-text {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.form-text-wrap {
+  width: 100%;
+  height: 20%;
+}
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.user_botton {
+  background: #ea352d;
+}

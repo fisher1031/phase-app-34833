@@ -62,3 +62,4 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'rename'
 gem "aws-sdk-s3", require: false
+gem 'acts_as_list'
