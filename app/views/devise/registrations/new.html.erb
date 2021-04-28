@@ -47,8 +47,11 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "ユーザー登録" %>
+      <%= f.button :type => "submit", class: "btn btn--edit btn-d" do %>
+      <i class="fas fa-check"></i> ユーザー登録
+      <% end %>
       </div>
+
     <% end %>
   </div>
 </div>

@@ -508,10 +508,6 @@ a.btn-a i.fa {
   margin-right: 1rem;
 }
 
-a.btn-c {
-  
-}
-
 a.btn-c i.fa {
   position: absolute;
   top:0;
@@ -522,6 +518,12 @@ a.btn-c i.fa {
   height: 40px;
   margin: auto;
   font-size: 30px;
+}
+
+button.btn-d {
+  background-color:#ea352d;
+  color:#f0f0f0;
+  width: 100%;
 }
 
 ul {
