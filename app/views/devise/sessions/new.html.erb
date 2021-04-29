@@ -1,31 +1,36 @@
 <div class="contents row">
   <div class="container">
-    <h2>Log in</h2>
+   <div class="title">
+    <h2>ログイン</h2>
+   </div>
     <div class='login-flash-message'>
       <%= flash[:notice] %>
       <%= flash[:alert] %>
     </div>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+      <div class='form-text-wrap'>
+        <label class="form-text">メールアドレス</label>
+        <%= f.email_field :email, autofocus: true, placeholder: ' 登録したメールアドレスを入力して下さい' %>
+      </div>
       </div>
 
       <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <label class="form-text">パスワード</label>
+        <%= f.password_field :password, autocomplete: "off", placeholder: ' 登録したパスワードを入力して下さい' %>
       </div>
 
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.label :remember_me %><br />
+      <%# if devise_mapping.rememberable? %>
+        <%#<div class="field">
+          <%# f.label :remember_me %><%#<br />
           <%= f.check_box :remember_me %>
-        </div>
-      <% end -%>
+        <%#S/div>
+      <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
-      </div>
+      <%= f.button :type => "submit", class: "btn btn--edit btn-d" do %>
+      <i class="fas fa-check"></i> ログイン
+      <% end %>
     <% end %>
   </div>
 </div>
