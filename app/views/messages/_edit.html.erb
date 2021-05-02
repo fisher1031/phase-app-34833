@@ -1,5 +1,5 @@
+<div class="form">
 <%= form_with model: @message, url: message_path, id: 'new_message', local: true do |f| %>
-タイトル名（
   <%= f.text_field :name, placeholder: "タイトル名を入力して下さい" %>
   <%= f.text_area :content, placeholder: '説明文を入力して下さい' %>
   <%= f.text_field :place, placeholder: '場所を入力して下さい' %>
@@ -7,8 +7,11 @@
   <%= f.text_field :how, placeholder: '使用した道具等を入力して下さい' %>
   <%= f.file_field :images, name: 'message[images][]', id: 'message_image' %>
   <div id="image-list"></div>
-    <%= f.submit '送信' %>
+      <%= f.button :type => "submit", class: "btn btn--edit btn-d" do %>
+       編集完了
+      <% end %>
 <% end %>
+</div>
 
 <% @message.images.each do |image| %>
   <%= image_tag image, class: 'images', :title => "#{image.filename}"  %>
