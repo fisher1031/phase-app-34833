@@ -9,10 +9,16 @@ RSpec.describe User, type: :model do
     it 'nicknameとemail、passwordとpassword_confirmationがあれば登録できる' do
       expect(@user).to be_valid
     end
-    it 'emailが空では登録できない' do
-      # emailが空では登録できないテストコードを記述します
+    it 'nicknameは6文字までなら登録できる' do
+    @user.nickname = 'あaA12'
+    expect(@user).to be_valid
     end
-   end
+    it 'passwordとpassword_confirmationが一致し、かつ6文字以上の半角英数字であれば登録できる' do
+      @user.password = '123abc'
+      @user.password_confirmation = '123abc'
+      expect(@user).to be_valid
+    end
+  end
 
    context '新規登録がうまくいかないとき' do
    end
