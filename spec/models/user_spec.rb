@@ -26,6 +26,27 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include "ニックネームを入力してください"
     end
+    it 'emailが空では登録できない' do
+      @user.email = ''  # emailの値を空にする
+      @user.valid?
+      expect(@user.errors.full_messages).to include "Eメールを入力してください"
+    end
+    it 'passwordが空では登録できない' do
+      @user.password = ''  # passwordの値を空にする
+      @user.valid?
+      expect(@user.errors.full_messages).to include "パスワードを入力してください"
+    end
+    it 'passwordは6文字以下では登録できない' do
+      @user.password = '123ab'
+      @user.valid?
+      expect(@user.errors.full_messages).to include 'パスワードは6文字以上で入力してください'
+    end
+    it 'passwordとpassword_confirmationの値が一致していなければ登録できない' do
+      @user.password = '000aaa'
+      @user.password_confirmation = '000000'
+      @user.valid?
+      expect(@user.errors.full_messages).to include "パスワード（確認用）とパスワードの入力が一致しません"
+    end
    end
   end
 end
